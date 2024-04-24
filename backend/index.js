@@ -24,3 +24,7 @@ connectDB().then(() => {
     console.log(`listening at port ${port}`)
   })
 })
+app.get('/', (req, res) => {
+  res.send(`Express is running on https://localhost:${port}`);
+});
+
