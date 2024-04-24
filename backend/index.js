@@ -1,13 +1,10 @@
 import express from 'express'
-import dotenv from 'dotenv'
-import mongoose from 'mongoose'
-import cors from 'cors'
+ import cors from 'cors'
  import connectDB from './database/connnection.js'
 import {v2 as cloudinary} from 'cloudinary';
 import router from './routes/auth.js'
 
-dotenv.config();
-const app = express();
+ const app = express();
 
 const port = 3000;
 const corsOptions = {

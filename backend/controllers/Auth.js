@@ -1,5 +1,4 @@
-import bcrypt from 'bcrypt';
-import cloudinary from 'cloudinary';
+ import cloudinary from 'cloudinary';
 import User from '../models/user.js';
 import jwt from "jsonwebtoken";
  
@@ -19,11 +18,10 @@ export const Register = async (req, res) => {
     const result = await cloudinary.uploader.upload(req.file.path);
     const imageURL = result.secure_url;
 
-    const hashedPassword = await bcrypt.hash(password, 10);
-    const newUser = new User({
+     const newUser = new User({
       name,
       email,
-      password: hashedPassword,
+      password,
       image: imageURL
     });
     await newUser.save();
@@ -41,7 +39,7 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email: email });
     if (!user) return res.status(400).json({ msg: "User does not exist. " });
 
-    const isMatch = await bcrypt.compare(password, user.password);
+    const isMatch = await compareValues(password, user.password);  
     if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
 
     const token = jwt.sign({ id: user._id },"xxx");
