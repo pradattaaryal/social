@@ -6,10 +6,10 @@ const useStore = create(
   persist(
     (set) => ({
       userData: [],
-      token: null,
+      token: [],
       posts: [],
-      savedpost:null,
-      profiledata: null,
+      savedpost:[],
+      profiledata: [],
       setUserDataAndToken: (userData, token) => set({ userData, token }),
       setpost: (fetcheddata) => set({ posts: fetcheddata }),
       setsavedpost: (fetcheddata) => set({ savedpost: fetcheddata }),
