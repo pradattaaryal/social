@@ -16,6 +16,7 @@ const Home = () => {
       const response = await axios.get('https://social-o53m.onrender.com/api/posts');
       const postdata = response.data;
       const fetchedData = postdata.reverse();
+      console.log(fetchedData)
       setpost(fetchedData);
     } catch (error) {
       console.error('Error fetching posts:', error);
