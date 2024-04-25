@@ -6,8 +6,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const { setUserDataAndToken } = useStore();
-  const navigate = useNavigate(); // Using useNavigate hook
-
+ 
   const LoginBtn = async () => {
     try {
       const formData = new FormData();
