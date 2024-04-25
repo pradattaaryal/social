@@ -17,7 +17,7 @@ const Useravatar = ({ auserPicturePath, aname, friendId,id  ,flist    }) => {
       },
     });
     const datax = response.data;
-        setfriends(datax);
+      await setfriends(datax);
     
   console.log(userData.friends)
    } catch (error) {
