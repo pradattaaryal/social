@@ -7,7 +7,7 @@ import useStore from '@/lib/hooks';
 const Useravatar = ({ auserPicturePath, aname, friendId,id  ,flist    }) => {
   const { token,setfriends,friends,userData } = useStore(); 
  const usedf=userData.friends
-const isFriend = usedf && usedf.find((friend) => friend._id === friendId);
+ const isFriend = usedf.find((friend) => friend._id === friendId);
  const checkFriend = async () => {
   try {
     const response = await axios.patch(`https://social-o53m.onrender.com/api/${id}/${friendId}`, {
