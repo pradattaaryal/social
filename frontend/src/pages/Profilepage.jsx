@@ -17,7 +17,7 @@ const Profilepage = () => {
 
   const fetchPosts = async () => {
     try {
-       const response = await axios.get(`http://localhost:3000/api/profile/${friendId}`);
+       const response = await axios.get(`https://social-o53m.onrender.com/api/profile/${friendId}`);
       const postData = response.data;
       setprofiledata(postData.user);
       setpostdata(postData.data);
