@@ -16,7 +16,7 @@ const Login = () => {
       formData.append('email', email);
       formData.append('password', password);
 
-      const response = await axios.post(`http://localhost:3000/api/login`, formData, {
+      const response = await axios.post(`https://social-o53m.onrender.com/api/login`, formData, {
         headers: {
           'Content-Type': 'application/json'
         }
