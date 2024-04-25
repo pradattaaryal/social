@@ -25,7 +25,7 @@ const Login = () => {
 
       await setUserDataAndToken(data.user, data.token);
 
-      navigate('/home');
+      window.location.replace('/home')
     } catch (error) {
       console.error(error);
     }
