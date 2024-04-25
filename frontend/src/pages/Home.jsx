@@ -43,6 +43,7 @@ const Home = () => {
               title={post.title}
               description={post.description}
             />
+      </div>
           ))}
         </ScrollArea> 
          
