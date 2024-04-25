@@ -10,7 +10,7 @@ const Useravatar = ({ auserPicturePath, aname, friendId,id  ,flist    }) => {
  const isFriend = usedf.find((friend) => friend._id === friendId);
  const checkFriend = async () => {
   try {
-    const response = await axios.patch(`http://localhost:3000/api/${id}/${friendId}`, {
+    const response = await axios.patch(`https://social-o53m.onrender.com/api/${id}/${friendId}`, {
       headers: {
         Authorization: `Bearer ${token}`,
         "Content-Type": "application/json",
