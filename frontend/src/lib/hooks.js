@@ -19,3 +19,8 @@ const useStore = create((set) => ({
     })),
   setprofiledata: (data) => set({ profiledata: data }),
 }));
+useEffect(() => {
+  const data = useStore.getState(); // Get current state
+  localStorage.setItem('useStore', JSON.stringify(data)); // Save to localStorage
+}, [useStore]);
+export default useStore;
