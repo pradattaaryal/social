@@ -7,7 +7,7 @@ import Ads from '@/components/Ads/Ads';
 import useStore from '@/lib/hooks';
 import { ScrollArea } from "@/components/ui/scroll-area"
 import axios from 'axios';
-
+ 
 const Home = () => {
   const { userData, setpost, posts } = useStore();
 
