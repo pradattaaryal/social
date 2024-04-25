@@ -1,15 +1,13 @@
 import React, { useState } from "react";
 import axios from 'axios';
 import upload from '../assets/upload_area.svg';
-import { useNavigate } from 'react-router-dom';
-
+ 
 const Sign = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [image, setImage] = useState(null);  
-  const navigate = useNavigate();
-
+ 
   const Register = async () => {
     try {
       const formData = new FormData();
@@ -25,7 +23,7 @@ const Sign = () => {
       });
       const data = await lodata.data;
       console.log(data);
-      navigate('/')
+      window.location.replace('/xx')
 
     } catch (error) {
       console.error(error);
