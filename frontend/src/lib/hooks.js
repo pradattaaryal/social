@@ -1,23 +1,21 @@
+// useStore.js
 import { create } from 'zustand';
 
-// Define your store
 const useStore = create((set) => ({
   userData: null,
   token: null,
   posts: null,
   savedpost: null,
   profiledata: null,
-  setUserDataAndToken: (userData, token) => set({ userData, token }),
-  setpost: (fetcheddata) => set({ posts: fetcheddata }),
-  setsavedpost: (fetcheddata) => set({ savedpost: fetcheddata }),
-  setfriends: (friendId) =>
-    set((state) => ({
-      userData: {
-        ...state.userData,
-        friends: friendId,
-      },
-    })),
-  setprofiledata: (data) => set({ profiledata: data }),
+  setUserDataAndToken: (userData, token) => {
+    // Log the received userData and token
+    console.log("Received userData:", userData);
+    console.log("Received token:", token);
+    
+    // Update the store state
+    set({ userData, token });
+  },
+  // Other state setters...
 }));
 
 export default useStore;
