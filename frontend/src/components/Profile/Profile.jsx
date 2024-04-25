@@ -1,6 +1,10 @@
 import { CardContent, Card } from "@/components/ui/card";
 
 export default function Profile({ name, image }) {
+  // Provide default values or handle null case
+  const defaultName = "Default Name";
+  const defaultImage = "/default-image.jpg";
+
   return (
     <Card className="w-full max-w-full md:max-w-[22%] p-4 h-full max-h-[50%] border-black border-2">
       <CardContent className="flex items-center space-y-3 flex-col text-center">
@@ -10,7 +14,7 @@ export default function Profile({ name, image }) {
               alt="User avatar"
               className="object-cover"
               height={100}
-              src={image}
+              src={image || defaultImage} // Use default image if image is null
               style={{
                 aspectRatio: "100/100",
                 objectFit: "cover",
@@ -18,7 +22,7 @@ export default function Profile({ name, image }) {
               width={100}
             />
           </div>
-          <h2 className="text-lg font-bold">{name}</h2>
+          <h2 className="text-lg font-bold">{name || defaultName}</h2> {/* Use default name if name is null */}
           <p className="text-sm font-medium not-italic text-gray-500 dark:text-gray-400">Frontend Engineer</p>
         </div>
         <div>medium</div>
