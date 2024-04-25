@@ -30,9 +30,7 @@ console.log(userData)
       console.error(error);
     }
   }
- useEffect(() => {
-    console.log(userData);
-  }, [userData]);
+ 
 
   return (
     <div className="flex h-screen">
