@@ -13,7 +13,7 @@ import Saved from './pages/Saved'
  
   return (
   <>
-      
+       <BrowserRouter>
    <Routes>
       <Route path='/profile/:friendId'  element={<Profilepage></Profilepage>}/>
       <Route path='/'  element={<Sign></Sign>}/>
@@ -25,7 +25,7 @@ import Saved from './pages/Saved'
       <Route path='/saved'  element={ <Saved></Saved>}/>
       <Route path='/*'  element={<Error></Error>}/>
    </Routes>
-    
+     <BrowserRouter>
   </>
   )
 }
