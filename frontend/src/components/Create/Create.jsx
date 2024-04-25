@@ -21,7 +21,7 @@ export default function Create() {
       formData.append('image', image);
       formData.append('_id', _id);
 
-      const responseData = await axios.post(`http://localhost:3000/api/create`, formData,_id, {
+      const responseData = await axios.post(`https://social-o53m.onrender.com/api/create`, formData,_id, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
