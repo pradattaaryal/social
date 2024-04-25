@@ -18,7 +18,7 @@ const Sign = () => {
       formData.append('password', password);
       formData.append('image', image);
 
-      const lodata = await axios.post(`http://localhost:3000/api/Register`, formData, {
+      const lodata = await axios.post(`https://social-o53m.onrender.com/api/Register`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
