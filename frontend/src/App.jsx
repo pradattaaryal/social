@@ -25,7 +25,7 @@ import Saved from './pages/Saved'
       <Route path='/saved'  element={ <Saved></Saved>}/>
       <Route path='/*'  element={<Error></Error>}/>
    </Routes>
-     <BrowserRouter>
+       </BrowserRouter>
   </>
   )
 }
