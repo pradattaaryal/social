@@ -5,11 +5,11 @@ import { persist } from 'zustand/middleware';
 const useStore = create(
   persist(
     (set) => ({
-      userData: [],
-      token: [],
-      posts: [],
-      savedpost:[],
-      profiledata: [],
+      userData:null,
+      token:null,
+      posts:null,
+      savedpost:null,
+      profiledata:null,
       setUserDataAndToken: (userData, token) => set({ userData, token }),
       setpost: (fetcheddata) => set({ posts: fetcheddata }),
       setsavedpost: (fetcheddata) => set({ savedpost: fetcheddata }),
