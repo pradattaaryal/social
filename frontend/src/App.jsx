@@ -17,7 +17,7 @@ function App() {
         <Routes>
           <Route path='/profile/:friendId' element={<Profilepage />} />
           <Route path='/' element={<Sign />} />
-          <Route path='/xx' element={<Login />} ></Route>
+          <Route path='/login' element={<Login />} ></Route>
           <Route path='/feed' element={<Feed />} />
           <Route path='/create' element={<Create />} />
           <Route path='/home' element={<Home />} />
