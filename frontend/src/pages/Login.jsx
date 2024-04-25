@@ -1,16 +1,16 @@
-// Login.js
 import React, { useState } from "react";
 import axios from 'axios';
 import useStore from "@/lib/hooks";
-
+ 
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setUserDataAndToken, userData } = useStore();
+  const { setUserDataAndToken ,userData} = useStore();
  
   const LoginBtn = async () => {
     try {
       const formData = new FormData();
+
       formData.append('email', email);
       formData.append('password', password);
 
@@ -20,15 +20,9 @@ const Login = () => {
         }
       });
       const data = await response.data;
-
-      // Log the received data from the API
-      console.log("Response data:", data);
-
-      // Update userData and token in the store
+console.log(data)
       await setUserDataAndToken(data.user, data.token);
-      
-      // Log the userData after update
-      console.log("Updated userData:", userData);
+console.log(userData)
  
      } catch (error) {
       console.error(error);
@@ -55,4 +49,37 @@ const Login = () => {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="px-2 border-2 rounded-lg py-2 w-full md:w-[300px] border-purple-100 transition-all delay-100 ease-in
+                  className="px-2 border-2 rounded-lg py-2 w-full md:w-[300px] border-purple-100 transition-all delay-100 ease-in-out focus:border-purple-500 outline-none"
+                />
+              </div>
+              <div>
+                <label htmlFor="password" className="block text-sm font-medium text-gray-700">Password</label>
+                <input
+                  autoComplete="on"
+                  type="password"
+                  name="password"
+                  id="password"
+                  placeholder="Enter your password"
+                  value={password}
+                  onChange={(e) => setPassword(e.target.value)}
+                  className="px-2 border-2 rounded-lg py-2 w-full md:w-[300px] border-purple-100 transition-all delay-100 ease-in-out focus:border-purple-500 outline-none"
+                />
+              </div>
+            </div>
+            <div>
+              <button
+                type="button"
+                onClick={LoginBtn}
+                className="w-full flex justify-center py-3 px-4 border border-transparent rounded-md shadow-sm text-white bg-indigo-600 hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500"
+              >
+                Login
+              </button>
+            </div>
+           </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+export default Login;
