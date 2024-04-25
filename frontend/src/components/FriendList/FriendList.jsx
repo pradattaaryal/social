@@ -7,19 +7,21 @@ export default function Friends({ userid, list }) {
   const [frienddata, setFriendData] = useState([]);
   const { userData } = useStore();
 
-  const fetchFriends = async () => {
-    try {
-      const response = await axios.get(`http://localhost:3000/api/friends/${userid}`);
-      const friend = response.data;
-      setFriendData(friend);
-    } catch (error) {
-      console.error("Error fetching friends:", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchFriends = async () => {
+      try {
+        if (userData && userData.friends) { // Ensure userData and its friends property are not null
+          const response = await axios.get(`http://localhost:3000/api/friends/${userid}`);
+          const friend = response.data;
+          setFriendData(friend);
+        }
+      } catch (error) {
+        console.error("Error fetching friends:", error);
+      }
+    };
+
     fetchFriends();
-  }, [userData?.friends]); // Use optional chaining to handle userData being null
+  }, [userid, userData]); // Add userData as a dependency
 
   return (
     <div className="w-full border-2 border-black rounded-lg dark:border-gray-800">
@@ -30,18 +32,13 @@ export default function Friends({ userid, list }) {
         <div className="flex-1 overflow-auto py-6 grid gap-4">
           {frienddata &&
             frienddata.map((item, index) => (
-              <React.Fragment key={index}>
-                {/* Add a check for userData before rendering Useravatar */}
-                {userData && (
-                  <Useravatar
-                    auserPicturePath={item.image}
-                    flist={list}
-                    aname={item.name}
-                    friendId={item._id}
-                    id={userData._id}
-                  />
-                )}
-              </React.Fragment>
+              <Useravatar
+                key={index}
+                auserPicturePath={item.image}
+                flist={list}
+                aname={item.name}
+                friendId={item._id}
+              />
             ))}
         </div>
       </div>
