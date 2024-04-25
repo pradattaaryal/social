@@ -45,8 +45,7 @@ const Home = () => {
             />
           ))}
         </ScrollArea> 
-        <div className='gap-5 hidden md:flex md:flex-col w-full max-w-full md:max-w-[25%]'><Friends userid={userData ? userData._id : null} list={true} /><Ads /></div>
-      </div>
+         
     </>
   );
 };
