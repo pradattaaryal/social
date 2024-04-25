@@ -10,7 +10,7 @@ export default function Feed({name,image,title,userPicturePath,description, post
   const[data,setdata]=useState()
   const save = async () => {
     try {
-       const response = await axios.post(`http://localhost:3000/api/post/${userData._id}/${postid}`);
+       const response = await axios.post(`https://social-o53m.onrender.com/api/post/${userData._id}/${postid}`);
       const rdata = response.status; 
       console.log(rdata)
       setsaved(!saved);  
