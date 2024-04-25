@@ -15,7 +15,7 @@ export default function Saved() {
 
       const fetchData = async () => {
           try {
-              const response = await axios.get(`http://localhost:3000/api/saved/${userData._id}`);
+              const response = await axios.get(`https://social-o53m.onrender.com/api/saved/${userData._id}`);
               setsavedpost(response.data);
               console.log(savedpost)
               setLoading(false); // Set loading to false after data is fetched
