@@ -7,7 +7,7 @@ const useStore = create(
     (set) => ({
       userData: null,
       token: null,
-      posts: null,
+      posts: [],
       savedpost:null,
       profiledata: null,
       setUserDataAndToken: (userData, token) => set({ userData, token }),
