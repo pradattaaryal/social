@@ -8,7 +8,7 @@ import router from './routes/auth.js'
 
 const port = 3000;
 const corsOptions = {
-  origin: 'https://social-s18s.vercel.app',
+  origin: 'https://social-rouge-psi.vercel.app',
 };
 cloudinary.config({ 
     cloud_name:'dnlxxfy5u', 
