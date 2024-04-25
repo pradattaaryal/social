@@ -46,6 +46,6 @@ export const login = async (req, res) => {
     delete user.password;
     res.status(200).json({ token, user ,message:"Logged In Successfully!"});
   } catch (err) {
-    res.status(500).json({ error: err.message });
+    res.status(330).json({ error: err.message });
   }
 };
