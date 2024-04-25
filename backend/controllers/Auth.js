@@ -37,15 +37,17 @@ export const login = async (req, res) => {
   try {
     const { email, password } = req.body;
     const user = await User.findOne({ email: email });
-    if (!user) return res.status(400).json({ msg: "User does not exist. " });
+    if (!user) return res.status(400).json({ msg: "User does not exist." });
 
-    const isMatch = await compareValues(password, user.password);  
-    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials. " });
+    const isMatch = await compareValues(password, user.password);
+    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
 
-    const token = jwt.sign({ id: user._id },"xxx");
+    const token = jwt.sign({ id: user._id }, "xxx");
     delete user.password;
-    res.status(200).json({ token, user ,message:"Logged In Successfully!"});
+    res.status(200).json({ token, user, message: "Logged In Successfully!" });
   } catch (err) {
-    res.status(330).json({ error: err.message });
+    console.error(err); // Log the error for debugging
+    res.status(500).json({ error: "Internal Server Error" }); // Use 500 for internal server errors
   }
 };
+
