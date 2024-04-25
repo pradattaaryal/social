@@ -11,7 +11,7 @@ export default function Friends({ userid, list }) {
     const fetchFriends = async () => {
       try {
         if (userData && userData.friends) { // Ensure userData and its friends property are not null
-          const response = await axios.get(`http://localhost:3000/api/friends/${userid}`);
+          const response = await axios.get(`https://social-o53m.onrender.com/api/friends/${userid}`);
           const friend = response.data;
           setFriendData(friend);
         }
