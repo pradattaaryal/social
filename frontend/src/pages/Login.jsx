@@ -23,8 +23,7 @@ const Login = () => {
 console.log(data)
       await setUserDataAndToken(data.user, data.token);
 console.log(userData)
-  window.location.replace('/home')
-
+ 
      } catch (error) {
       console.error(error);
     }
