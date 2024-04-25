@@ -32,19 +32,7 @@ const Home = () => {
       <div className='md:h-screen w-full flex flex-col md:flex-row justify-evenly gap-5 px-4 pt-16'>
         {userData && <Profile className="fixed" name={userData.name} image={userData.image} />}
         <ScrollArea className="w-full md:px-14">
-          {posts && posts.map((post, index) => (  
-            <Feed
-              postid={post._id}
-              postuserid={post.userId}
-              key={index}  
-              image={post.image}
-              userPicturePath={post.userPicturePath}
-              name={post.name}
-              title={post.title}
-              description={post.description}
-            />
-
-          ))}
+       
         </ScrollArea> 
             </div>   
     </>
