@@ -17,8 +17,7 @@ const Home = () => {
       const postdata = response.data;
       const fetchedData = postdata.reverse();
       console.log(fetchedData)
-console.log(userData)
-      setpost(fetchedData);
+       setpost(fetchedData);
     } catch (error) {
       console.error('Error fetching posts:', error);
     }
