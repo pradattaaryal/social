@@ -1,4 +1,4 @@
-import { Route, BrowserRouter as Router, Routes } from 'react-router-dom';
+ import { BrowserRouter,Routes,Route } from 'react-router-dom';
 import './App.css';
 import Home from './pages/Home';
 import Sign from './pages/Auth';
@@ -13,7 +13,7 @@ import Saved from './pages/Saved';
 function App() {
   return (
     <>
-      <Router>
+<BrowserRouter>
         <Routes>
           <Route path='/profile/:friendId' element={<Profilepage />} />
           <Route path='/' element={<Sign />} />
@@ -25,7 +25,7 @@ function App() {
           <Route path='/saved' element={<Saved />} />
           <Route path='/*' element={<Error />} />
         </Routes>
-      </Router>
+ </BrowserRouter>
     </>
   );
 }
