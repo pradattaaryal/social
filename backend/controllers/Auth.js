@@ -39,8 +39,8 @@ export const login = async (req, res) => {
     const user = await User.findOne({ email: email });
     if (!user) return res.status(400).json({ msg: "User does not exist." });
 
-    const isMatch = await compareValues(password, user.password);
-    if (!isMatch) return res.status(400).json({ msg: "Invalid credentials." });
+    if (user.password !== password) return res.status(400).json({ msg: "Invalid credentials." });
+
 
     const token = jwt.sign({ id: user._id }, "xxx");
     delete user.password;
