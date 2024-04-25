@@ -23,8 +23,7 @@ const Sign = () => {
       });
       const data = await lodata.data;
       console.log(data);
-      window.location.replace('/login')
-
+  window.location.replace('/login')
     } catch (error) {
       console.error(error);
     }
