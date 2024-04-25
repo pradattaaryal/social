@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState,useEffect  } from "react";
 import axios from 'axios';
 import useStore from "@/lib/hooks";
  
@@ -21,13 +21,18 @@ const Login = () => {
       });
       const data = await response.data;
 console.log(data)
-      await setUserDataAndToken(data.user, data.token);
+     await setUserDataAndToken(data.user, data.token, () => {
+        console.log(userData); // Log inside the callback function
+      });
 console.log(userData)
  
      } catch (error) {
       console.error(error);
     }
   }
+ useEffect(() => {
+    console.log(userData);
+  }, [userData]);
 
   return (
     <div className="flex h-screen">
