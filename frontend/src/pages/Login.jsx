@@ -20,11 +20,10 @@ const Login = () => {
         }
       });
       const data = await response.data;
-
+console.log(data)
       await setUserDataAndToken(data.user, data.token);
 
-      window.location.replace('/home')
-    } catch (error) {
+     } catch (error) {
       console.error(error);
     }
   }
