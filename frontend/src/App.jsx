@@ -16,8 +16,8 @@ import Saved from './pages/Saved'
       
    <Routes>
       <Route path='/profile/:friendId'  element={<Profilepage></Profilepage>}/>
-      <Route path='/signin'  element={<Sign></Sign>}/>
-      <Route path='/'  element={ <Login></Login>}/>
+      <Route path='/'  element={<Sign></Sign>}/>
+      <Route path='/xx'  element={ <Login></Login>}/>
       <Route path='/feed'  element={ <Feed></Feed> }/>
       <Route path='/create'  element={ <Create></Create> }/>
       <Route path='/home'  element={<Home></Home>}/>
