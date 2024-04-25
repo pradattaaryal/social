@@ -19,7 +19,7 @@ export default function Friends({ userid, list }) {
 
   useEffect(() => {
     fetchFriends();
-  }, [userData.friends]);
+  }, [userData?.friends]); // Use optional chaining to handle userData being null
 
   return (
     <div className="w-full border-2 border-black rounded-lg dark:border-gray-800">
@@ -31,6 +31,7 @@ export default function Friends({ userid, list }) {
           {frienddata &&
             frienddata.map((item, index) => (
               <React.Fragment key={index}>
+                {/* Add a check for userData before rendering Useravatar */}
                 {userData && (
                   <Useravatar
                     auserPicturePath={item.image}
