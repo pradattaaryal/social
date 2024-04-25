@@ -5,7 +5,7 @@ import useStore from "@/lib/hooks";
 const Login = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const { setUserDataAndToken } = useStore();
+  const { setUserDataAndToken ,userData} = useStore();
  
   const LoginBtn = async () => {
     try {
@@ -22,6 +22,7 @@ const Login = () => {
       const data = await response.data;
 console.log(data)
       await setUserDataAndToken(data.user, data.token);
+console.log(userData)
 
      } catch (error) {
       console.error(error);
