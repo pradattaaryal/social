@@ -25,7 +25,8 @@ console.log(data)
         console.log(userData); // Log inside the callback function
       });
 console.log(userData)
- 
+   window.location.replace('/home')
+
      } catch (error) {
       console.error(error);
     }
