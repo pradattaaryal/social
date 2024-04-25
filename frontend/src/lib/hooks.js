@@ -22,12 +22,7 @@ const useStore = create(
         })),
       setprofiledata: (data) => set({ profiledata: data }),
     }),
-    {
-      name: 'your-store-name', // Choose a unique name for your store
-      // Use localStorage for persistence
-      storage: localStorage,
-    }
-  )
+    )
 );
 
 export default useStore;
