@@ -24,8 +24,7 @@ console.log(data)
      await setUserDataAndToken(data.user, data.token, () => {
         console.log(userData); // Log inside the callback function
       });
-console.log(userData)
-   window.location.replace('/home')
+    window.location.replace('/home')
 
      } catch (error) {
       console.error(error);
